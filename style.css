@@ -1,0 +1,34 @@
+:root {
+    --dsg: rgb(47, 79, 79);
+}
+
+body {
+    font-family: 'IBM Plex Sans', cursive;
+}
+
+#head {
+    color: #2f4f4f;
+    text-shadow: 3px 2px 0rem rgba(173, 173, 173, 0.992);
+}
+
+#head:after {
+    content: "";
+    position: absolute;
+    height: 1rem;
+    width: 6rem;
+    transform: translate(-5rem, 4rem);
+    border-top: 4px solid rgb(253 224 71);;
+    border-radius: 40%;
+}
+
+.link-shadow {
+    text-shadow: 3px 2px 0px rgb(51 65 85);
+}
+
+
+/* utility classes */
+.cursive { font-family: 'Oleo Script Swash Caps', cursive; }
+.display { font-family: 'Alumni Sans Inline One', cursive; }
+.dsg-color { color: var(--dsg); }
+.dsg-bg { background-color: var(--dsg); }
+/* utility classes */
