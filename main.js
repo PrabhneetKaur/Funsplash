@@ -27,19 +27,23 @@ function getTheImagesReady(columns) {
             let columnContainers = [];
             for (let j = 0; j < columns; j++) {
                 let temp = $("<div></div>");
-                temp.addClass("grid grid-columns-1");
+                temp.addClass("grid grid-columns-1 gap-4 items-start");
                 columnContainers.push(temp);
+                $("#photo-gallery-container").append(temp);
             }
+
             for (let i = 0, k = 0; i < data.results.length; i++) {
-                let imageContainer = $(`<img src=${data.results[i].urls.regular} alt=${data.results[i].alt_description} />`);
+                let imageContainer = $("<figure class='relative shadow-lg'></figure>");
+                
+                imageContainer.append(`<a href=${data.results[i].links.html} class='absolute w-full h-full image-link flex justify-center items-center'><i class='fal fa-link text-7xl text-white'></i></a>`);
+                
+                imageContainer.append(`<img src=${data.results[i].urls.regular} alt=${data.results[i].alt_description} />`);
+                
                 columnContainers[k].append(imageContainer);
 
                 if (k === columns - 1) k = 0;
                 else k++;
-            }
-
-            for (let j = 0; j < columns; j++) {
-                $("photo-gallery-container").append(columnContainers[j]);
+                console.log(columnContainers);
             }
             
         })
@@ -49,10 +53,16 @@ function getTheImagesReady(columns) {
         })
 }
 
+let resizeEventHandler;
 $(document).ready(() => {
-    getTheImagesReady(getColumns());
+    resizeEventHandler = setTimeout(() => getTheImagesReady(getColumns()), 1000);
 });
 
+let currentColumns = getColumns();
+
 $(window).resize(() => {
-    // getTheImagesReady(getColumns());
+    if (currentColumns != getColumns()) {
+        clearTimeout(resizeEventHandler);
+        resizeEventHandler = setTimeout(() => getTheImagesReady(getColumns()), 1000);
+    }
 });
