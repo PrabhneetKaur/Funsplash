@@ -21,6 +21,7 @@ function getColumns() {
 function populateTheData(columns, data, total_pages, total) {
     // necesary evil
     $("#photo-gallery-container").html("");
+    $("#precaution").removeClass("hidden");
 
     // This is just what people usually do with these kind of things.
     $("#info-data div:first-child").text(`Pages: ${total_pages || 1}`);
@@ -80,6 +81,7 @@ function getTheImagesReady(columns, val = null) {
         })
         .catch(err => {
             $("#error-message").removeClass("hidden");
+            $("#precaution").addClass("hidden");
             console.error(err);
         });
 }
@@ -95,6 +97,7 @@ $("#random-image-generator").click(() => {
         })
         .catch(err => {
             $("#error-message").removeClass("hidden");
+            $("#precaution").addClass("hidden");
             console.error(err);
         });
 });
@@ -121,3 +124,17 @@ $("#image-search-engine").submit(e => {
     }
     $("#image-search-input").attr("placeholder", val);
 });
+
+
+// footer related
+$("#cancel-form-submission").click(() => {
+    $("#cancel-form-submission").addClass("hidden");
+});
+
+$("#feedback-form").submit(e => {
+    e.preventDefault();
+    $("#cancel-form-submission").removeClass("hidden");
+    $("#feedback-form input").val("");
+    $("#feedback-form textarea").val("");
+    
+})

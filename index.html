@@ -37,12 +37,12 @@
 
     <!-- this is the form for image search engine -->
 
-    <form id="image-search-engine" class="w-max mx-auto py-6">
+    <form id="image-search-engine" class="w-max mx-auto py-6 flex flex-col sm:flex-row items-center">
         <span class="p-2 text-xl text-gray-300 rounded shadow-lg" style="background-color: darkslategray;">
             <input id="image-search-input" class="bg-transparent px-2 focus:outline-none" placeholder="technology" min="3" />
             <button type="submit"><i class="fal fa-search"></i></button>
         </span>
-        <button id="random-image-generator" type="button" class="ml-6 h-12 w-12 bg-yellow-300 dsg-color hover:text-black transition-colors rounded-full shadow-lg"><i class="fal fa-random text-xl"></i></button>
+        <button id="random-image-generator" type="button" class="sm:ml-6 mt-6 sm:mt-0 h-12 sm:w-12 flex sm:inline-block items-center px-4 sm:px-0 gap-4 sm:gap-0 bg-yellow-300 dsg-color hover:text-black transition-colors rounded-full shadow-lg"><span class="sm:hidden">Random</span><i class="fal fa-random text-xl"></i></button>
     </form>
 
     <div id="info-data" class="mt-12 px-8 md:px-16 text-lg flex justify-between">
@@ -52,11 +52,23 @@
 
     <div id="photo-gallery-container" class="py-12 px-8 md:px-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 justify-items-center items-start"></div>
 
-    <div id="error-message" class="hidden text-center w-1/2 mx-auto text-3xl text-red-500 justify-items-center">There has been some error with the api at the moment, don't worry we're trying to fix it! Please be patient.</div>
+    <div id="error-message" class="hidden cursive text-center w-1/2 mx-auto text-6xl text-red-500 justify-items-center py-8 border-y-8 border-rose-700">There has been some error with the api at the moment, don't worry we're trying to fix it! Please be patient.</div>
 
-    <div class="block w-72 mx-auto my-16 py-8 border-y-8 border-yellow-300 text-5xl text-center cursive text-slate-700 hover:text-slate-900 duration-400 transition-colors select-none" style="text-shadow: 2px 2px 0px #7b7b7bad;">There is more to show but the api has a limit of 50 requests per hour hence what more do you want for free!</div>
+    <div id="precaution" class="block w-72 mx-auto my-16 py-8 border-y-8 border-yellow-300 text-5xl text-center cursive text-slate-700 hover:text-slate-900 duration-400 transition-colors select-none" style="text-shadow: 2px 2px 0px #7b7b7bad;">There is more to show but the api has a limit of 50 requests per hour and what more do you want for free!</div>
 
-    <footer id="about" class="mt-8 w-full py-12 px-8"></footer>
+    <footer id="about" class="mt-8 w-full py-12 px-8 bg-slate-400/80 text-slate-800 bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1504309092620-4d0ec726efa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');">
+        <button id="cancel-form-submission" class="hidden mx-auto block dsl-color hover:text-slate-900 border-b-4 border-yellow-300"><i class="fal fa-times mr-4"></i> Your feedback has been sent to the developer.</button>
+        <form id="feedback-form" class="mt-8 flex flex-col mx-auto  max-w-sm md:max-w-md p-6 text-lg">
+            <div class="text-3xl mb-8 text-gray-800/90 underline underline-offset-8 decoration-yellow-300">Feedback Form</div>
+            <label>Your lovely name(nickname if any) *</label>
+            <input required class="py-1 px-2 mt-2 mb-6 rounded border border-slate-600 focus:border-black focus:outline-none" />
+            <label>Your awesome email *</label>
+            <input type="email" required class="py-1 px-2 mt-2 mb-6 rounded border border-slate-600 focus:border-black focus:outline-none" />
+            <label>Some thoughts *</label>
+            <textarea required class="px-4 py-2 mt-2 mb-4 rounded border border-slate-600 focus:border-black focus:outline-none max-h-72" rows="10" style="min-height: 18rem;" placeholder="The best website I have ever seen..."></textarea>
+            <button tyoe="submit" class="mt-5 text-2xl text-gray-300 hover:text-gray-100 px-4 py-1.5 bg-slate-700/50 hover:bg-slate-900 transition-colors duration-400 rounded">Shoot</button>
+        </form>
+    </footer>
 
     <script src="main.js"></script>
 </body>
