@@ -33,7 +33,7 @@ body {
 
 .image-link:hover {
     opacity: 1;
-    box-shadow: inset 0 0 10rem 10rem #00000050;
+    box-shadow: inset 0 0 15rem 15rem #00000050;
 }
 
 
