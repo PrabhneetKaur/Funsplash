@@ -2,6 +2,10 @@
     --dsg: rgb(47, 79, 79);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'IBM Plex Sans', cursive;
 }

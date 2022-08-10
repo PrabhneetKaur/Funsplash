@@ -28,21 +28,21 @@
     <nav id="top" class="py-3 px-8 text-gray-200 flex justify-center items-center space-x-20 bg-slate-700/70 display">
         <a href="#id" class="block font-medium text-yellow-300 text-4xl link-shadow">Home</a>
         <a href="#image-search-engine" class="block text-2xl font-medium text-yellow-300 link-shadow"><i class="fal fa-search"></i></a>
-        <a class="block text-4xl text-yellow-300 font-mdeium link-shadow">About</a>
+        <a href="#about" class="block text-4xl text-yellow-300 font-mdeium link-shadow">About</a>
     </nav>
 
     <!-- Just the logo -->
 
-    <div id="head" class="relative text-center my-12 text-5xl"><span class="text-7xl italic display">F</span><span class="cursive">unsplash</span></div>
+    <div id="head" class="relative text-center my-12 text-5xl scroll-smooth"><span class="text-7xl italic display">F</span><span class="cursive">unsplash</span></div>
 
     <!-- this is the form for image search engine -->
 
-    <form id="image-search-engine" class="w-max mx-auto">
+    <form id="image-search-engine" class="w-max mx-auto py-6">
         <span class="p-2 text-xl text-gray-300 rounded shadow-lg" style="background-color: darkslategray;">
             <input id="image-search-input" class="bg-transparent px-2 focus:outline-none" placeholder="technology" min="3" />
             <button type="submit"><i class="fal fa-search"></i></button>
         </span>
-        <button type="button" class="ml-6 h-12 w-12 bg-yellow-300 dsg-color hover:text-black transition-colors rounded-full shadow-lg"><i class="fal fa-random text-xl"></i></button>
+        <button id="random-image-generator" type="button" class="ml-6 h-12 w-12 bg-yellow-300 dsg-color hover:text-black transition-colors rounded-full shadow-lg"><i class="fal fa-random text-xl"></i></button>
     </form>
 
     <div id="info-data" class="mt-12 px-8 md:px-16 text-lg flex justify-between">
@@ -54,7 +54,9 @@
 
     <div id="error-message" class="hidden text-center w-1/2 mx-auto text-3xl text-red-500 justify-items-center">There has been some error with the api at the moment, don't worry we're trying to fix it! Please be patient.</div>
 
-    <footer></footer>
+    <div class="block w-72 mx-auto my-16 py-8 border-y-8 border-yellow-300 text-5xl text-center cursive text-slate-700 hover:text-slate-900 duration-400 transition-colors select-none" style="text-shadow: 2px 2px 0px #7b7b7bad;">There is more to show but the api has a limit of 50 requests per hour hence what more do you want for free!</div>
+
+    <footer id="about" class="mt-8 w-full py-12 px-8"></footer>
 
     <script src="main.js"></script>
 </body>
